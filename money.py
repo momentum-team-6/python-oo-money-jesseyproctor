@@ -58,8 +58,9 @@ class Money:
         pass
 
     def __str__(self):
-        return f'${Decimal(self.amount)}'
-        
+        formatted_float = "{:.2f}".format(self.amount)
+        return f'${(formatted_float)}'
+
         """
         Should use the currency symbol if available, else use the code.
         Use the currency digits to determine number of digits to show.
