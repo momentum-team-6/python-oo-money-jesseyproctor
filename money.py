@@ -11,6 +11,11 @@ class Currency:
     """
 
     def __init__(self, name, code, symbol=None, digits=2):
+        self.name = name
+        self.code = code
+        self.symbol = symbol
+        self.digits = digits
+
         """
         Parameters:
         - name -- the English name of the currency
@@ -36,11 +41,15 @@ class Currency:
 
 
 class Money:
+    
     """
     Represents an amount of money. Requires an amount and a currency.
     """
 
     def __init__(self, amount, currency):
+        self.amount = amount
+        self.currency = currency
+        
         """
         Parameters:
         - amount -- quantity of currency
@@ -49,6 +58,9 @@ class Money:
         pass
 
     def __str__(self):
+        formatted_float = "{:.2f}".format(self.amount)
+        return f'${(formatted_float)}'
+
         """
         Should use the currency symbol if available, else use the code.
         Use the currency digits to determine number of digits to show.
